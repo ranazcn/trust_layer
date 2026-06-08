@@ -126,7 +126,7 @@ The application includes 100 deterministic dummy profiles to demonstrate the alg
 ---
 
 ## 🎓 Academic Context
-This project was designed, architected, and developed for presentation at the **Information Technology Student Symposium (ITSS)**. It serves as a proof-of-concept for solving behavioral identity crises in decentralized environments without violating the trustless ethos of Web3.
+This project was designed, architected, and developed as a proof-of-concept for solving behavioral identity crises in decentralized environments without violating the trustless ethos of Web3.
 
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details. Open-source contributions and forks are highly encouraged to push Web3 security research forward.
