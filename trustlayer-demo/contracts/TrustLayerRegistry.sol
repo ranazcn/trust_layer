@@ -6,7 +6,8 @@ pragma solidity ^0.8.19;
  * @dev Stores off-chain calculated Trust Scores on-chain,
  * making them accessible to other dApps and smart contracts.
  * 
- * Scores can only be updated by authorized nodes in the Decentralized Oracle Network (DON).
+ * Scores can only be updated by admin-authorized oracle addresses.
+ * In a production scenario, these oracle addresses may represent nodes in a Decentralized Oracle Network.
  */
 contract TrustLayerRegistry {
     
@@ -38,8 +39,8 @@ contract TrustLayerRegistry {
     }
 
     /**
-     * @dev Adds a new Oracle node to the network.
-     * @param _oracle Address of the new Oracle
+     * @dev Authorizes a new oracle address to submit scores.
+     * @param _oracle Address of the oracle to authorize
      */
     function addOracle(address _oracle) external onlyAdmin {
         isOracle[_oracle] = true;
@@ -47,8 +48,8 @@ contract TrustLayerRegistry {
     }
 
     /**
-     * @dev Removes a malicious or inactive Oracle from the network.
-     * @param _oracle Address of the Oracle to remove
+     * @dev Removes authorization from an oracle address.
+     * @param _oracle Address of the oracle to revoke authorization from
      */
     function removeOracle(address _oracle) external onlyAdmin {
         isOracle[_oracle] = false;
